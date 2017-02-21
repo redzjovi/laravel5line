@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'line'], function () {
-    Route::post('messages', 'Line\MessagesController@index');
+Route::group(['prefix' => 'api/line'], function () {
+    Route::get('messages', function () {
+        return 'Line';
+    });
+    Route::post('messages', 'Api\Line\MessagesController@index');
 });
