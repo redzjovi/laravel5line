@@ -2,6 +2,7 @@
 namespace App\Http\Models;
 
 use App\User;
+use App\Http\Models\Activity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
@@ -9,8 +10,13 @@ class UserLine extends Model
 {
     protected $table = 'users_line';
 
-    public $status_array = ['1' => 'register'];
     public $timestamps = true;
+
+    /* relationships */
+    function activity()
+    {
+        return $this->hasOne('App\Http\Models\Activity', 'id', 'status');
+    }
 
     function check_user($lineId)
     {
@@ -26,7 +32,7 @@ class UserLine extends Model
                 $userLine = new self();
                 $userLine->user_id = $user->id;
                 $userLine->line_id = $lineId;
-                $userLine->status = array_search('register', $this->status_array);
+                $userLine->status = Activity::where('code', '/0')->first()->id;
                 $userLine->save();
             }
         }
