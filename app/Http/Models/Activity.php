@@ -12,8 +12,6 @@ class Activity extends Model
 
     function check_status_message($userLine, $text)
     {
-        var_dump($text);
-
         $activity = self::where('code', $text)->first();
         if ($activity)
         {

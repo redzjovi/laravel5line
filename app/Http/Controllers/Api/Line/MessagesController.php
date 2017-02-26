@@ -20,24 +20,24 @@ class MessagesController extends Controller
         $body = file_get_contents('php://input');
         file_put_contents('php://stderr', 'Body: '.$body);
 
-        $body = '{
-            "events": [
-                {
-                    "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
-                    "type": "message",
-                    "timestamp": 1462629479859,
-                    "source": {
-                        "type": "user",
-                        "userId": "U488b052cfa53ad77e08c4e9ac6b3ca15"
-                    },
-                    "message": {
-                        "id": "325708",
-                        "type": "text",
-                        "text": "Galaxy A5"
-                    }
-                }
-            ]
-        }';
+        // $body = '{
+        //     "events": [
+        //         {
+        //             "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+        //             "type": "message",
+        //             "timestamp": 1462629479859,
+        //             "source": {
+        //                 "type": "user",
+        //                 "userId": "U488b052cfa53ad77e08c4e9ac6b3ca15"
+        //             },
+        //             "message": {
+        //                 "id": "325708",
+        //                 "type": "text",
+        //                 "text": "Galaxy A5"
+        //             }
+        //         }
+        //     ]
+        // }';
         // "text": "Hello, world",
 
         $data = json_decode($body, true);
