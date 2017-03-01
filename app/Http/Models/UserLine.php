@@ -25,7 +25,7 @@ class UserLine extends Model
         if ($userLine === null)
         {
             $user = new User();
-            $user->name = $user->email = '';
+            $user->name = $user->email = strtotime(date('Y-m-d H:i:s'));
             $user->password = Hash::make('password');
             if ($user->save())
             {
