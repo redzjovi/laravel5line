@@ -55,7 +55,6 @@ class Activity extends Model
 
         $client = new Client(['base_uri' => 'http://www.gsmarena.com']);
         $response = $client->request('GET', '/results.php3?sQuickSearch=yes&sName='.urlencode($text));
-        var_dump('/results.php3?sQuickSearch=yes&sName='.urlencode($text));
         $html = $response->getBody();
 
         $dom = HtmlDomParser::str_get_html($html);
