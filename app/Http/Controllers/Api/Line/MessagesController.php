@@ -17,6 +17,8 @@ class MessagesController extends Controller
 
     function index(UserLine $userLine, Activity $activity)
     {
+        // http://laravel5line.herokuapp.com/api/line/messages
+
         $body = file_get_contents('php://input');
         file_put_contents('php://stderr', 'Body: '.$body);
 
@@ -38,7 +40,6 @@ class MessagesController extends Controller
         //         }
         //     ]
         // }';
-        // "text": "Hello, world",
 
         $data = json_decode($body, true);
 
