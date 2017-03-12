@@ -9,7 +9,7 @@ use Validator;
 
 class AdminController extends Controller
 {
-	function index()
+	public function index()
 	{
 		if (Auth::check()) {
 			return redirect('back/dashboard');
@@ -18,7 +18,7 @@ class AdminController extends Controller
 		return view('back.admin.login');
 	}
 
-	function login(Request $request)
+	public function login(Request $request)
 	{
 		$validator = Validator::make($request->all(), User::$rules['login']);
 
@@ -37,7 +37,7 @@ class AdminController extends Controller
 		return $response;
 	}
 
-	function logout()
+	public function logout()
 	{
 		Auth::logout();
 		return redirect('back/admin');

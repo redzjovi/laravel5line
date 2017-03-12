@@ -12,9 +12,9 @@
 	{{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) }}
 	{{ Form::label('password', ' ', ['class' => 'label-error text-danger', 'name' => 'password_error']) }}
 
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	{{ Form::submit('Sign in', ['class' => 'btn btn-block btn-primary']) }}
 	{{ Form::close() }}
-</div> <!-- /container -->
+</div>
 
 <script>
 $("#login_form").submit(function(e) {

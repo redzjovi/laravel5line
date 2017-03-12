@@ -1,13 +1,12 @@
 <?php
-
 namespace App\Http\Controllers\Back;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    function index()
+    public function index()
     {
     	return view('back.dashboard.index');
     }
