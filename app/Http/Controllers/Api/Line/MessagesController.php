@@ -34,7 +34,7 @@ class MessagesController extends Controller
     	$this->bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
     }
 
-    function index($live = 0)
+    function index($live = 1)
     {
         $userLine = new UserLine();
         $activity = new Activity();
