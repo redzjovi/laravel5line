@@ -97,6 +97,8 @@ return [
     |
     */
 
+    'check_login' => 'Incorrect Login',
+
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',

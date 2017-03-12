@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Models;
 
-use App\User;
 use App\Http\Models\Activity;
+use App\Http\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 

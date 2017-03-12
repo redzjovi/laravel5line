@@ -21,3 +21,11 @@ Route::group(['prefix' => 'api/line'], function () {
     });
     Route::post('messages', 'Api\Line\MessagesController@index');
 });
+
+Route::group(['prefix' => 'back'], function () {
+	Route::get('admin', 'Back\AdminController@index');
+	Route::post('admin/login', 'Back\AdminController@login');
+    Route::get('admin/logout', 'Back\AdminController@logout');
+
+	Route::get('dashboard', 'Back\DashboardController@index');
+});

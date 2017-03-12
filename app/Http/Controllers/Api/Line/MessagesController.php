@@ -8,6 +8,25 @@ use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
+    private $body_test = '{
+        "events": [
+            {
+                "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+                "type": "message",
+                "timestamp": 1462629479859,
+                "source": {
+                    "type": "user",
+                    "userId": "U488b052cfa53ad77e08c4e9ac6b3ca15"
+                },
+                "message": {
+                    "id": "325708",
+                    "type": "text",
+                    "text": "Galaxy A5"
+                }
+            }
+        ]
+    }';
+
     function __construct()
     {
         // init bot line
@@ -15,31 +34,19 @@ class MessagesController extends Controller
     	$this->bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV['CHANNEL_SECRET']]);
     }
 
-    function index(UserLine $userLine, Activity $activity)
+    function index($live = 0)
     {
+        $userLine = new UserLine();
+        $activity = new Activity();
         // http://laravel5line.herokuapp.com/api/line/messages
 
         $body = file_get_contents('php://input');
         file_put_contents('php://stderr', 'Body: '.$body);
 
-        // $body = '{
-        //     "events": [
-        //         {
-        //             "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
-        //             "type": "message",
-        //             "timestamp": 1462629479859,
-        //             "source": {
-        //                 "type": "user",
-        //                 "userId": "U488b052cfa53ad77e08c4e9ac6b3ca15"
-        //             },
-        //             "message": {
-        //                 "id": "325708",
-        //                 "type": "text",
-        //                 "text": "Galaxy A5"
-        //             }
-        //         }
-        //     ]
-        // }';
+        if ($live == 0)
+        {
+            $body = $this->body_test;
+        }
 
         $data = json_decode($body, true);
 

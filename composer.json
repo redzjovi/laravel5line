@@ -9,6 +9,7 @@
         "guzzlehttp/guzzle": "^6.2",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.4",
         "linecorp/line-bot-sdk": "^1.4",
         "sunra/php-simple-html-dom-parser": "^1.5"
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Http\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -25,5 +25,12 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    public static $rules = [
+        'login' => [
+            'email' => 'required|email|check_login:email,password',
+            'password' => 'required|check_login:email,password',
+        ],
     ];
 }
