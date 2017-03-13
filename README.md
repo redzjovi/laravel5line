@@ -9,9 +9,14 @@ Laravel 5.4 with Line Bot Messages.
 "php artisan migrate:refresh --seed"<br />
 
 ## Usage
+<!--
 At the moment, my app in <a href="https://www.heroku.com/">heroku.com</a>.<br />
 To make my app activated, go to url <a href="http://laravel5line.herokuapp.com/">http://laravel5line.herokuapp.com/</a>.<br />
+-->
 Add friends with @gyz7487j on Line, then try to chat.<br />
 
 ## Included libraries
-<a href="https://github.com/line/line-bot-sdk-php">line-bot-sdk-php</a>
+<a href="https://github.com/line/line-bot-sdk-php">line-bot-sdk-php</a><br /><br />
+
+<a href="https://github.com/guzzle/guzzle">Guzzle</a><br />
+<a href="https://github.com/LaravelCollective/html">LaravelCollective HTML</a>
